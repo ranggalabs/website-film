@@ -1,9 +1,11 @@
 import React from 'react'
 import { assets } from '../assets/assets'
-import { CalendarIcon, ClockIcon } from 'lucide-react'
+import { ArrowRight, CalendarIcon, ClockIcon } from 'lucide-react'
 import backgroundImage from '../assets/backgroundImage.png'
+import { useNavigate } from 'react-router-dom'
 
 const HeroSection = () => {
+    const  navigate = useNavigate()
   return (
     <div className='flex flex-col items-start justify-center gap-4 px-6 md:px-16 lg:px-36 bg-cover bg-center h-screen'
       style={{ backgroundImage: `url(${backgroundImage})` }} >
@@ -19,6 +21,13 @@ const HeroSection = () => {
             </div>
 
         </div>
+        <p className='max-w-md text-gray-300'>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam distinctio ullam ad praesentium cumque exercitationem. Labore expedita tenetur numquam ea veritatis facilis optio, cum non ex cupiditate impedit illo libero!
+        </p>
+        <button onClick={()=> navigate('/movies')} className='flex ites-center gap-1 px-6 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-full font-medium cursor-pointer'>
+          Explore Movies
+          <ArrowRight className='w-5 h-5'/>
+        </button>
       
     </div>
   )
